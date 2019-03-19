@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Авторизация</string>
+    <string name="prompt_email">Электронная почта</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="error_invalid_email">Этот email не корректный</string>
+    <string name="error_invalid_password">Некорректный пароль. Условия: Пароль должен обязательно содержать минимум 1 строчную букву, 1 заглавную, и 1 цифру, минимум 6 символов</string>
+    <string name="regulations_password">Пароль должен обязательно содержать минимум 1 строчную букву, 1 заглавную, и 1 цифру, минимум 6 символов</string>
+    <string name="error_incorrect_password">Этот пароль неверный</string>
+    <string name="error_field_required">Это поле обязательно</string>
+    <string name="create">СОЗДАТЬ</string>
+    <string name="in_development">Функционал пока ещё не готов и находится в разработке</string>
+</resources>

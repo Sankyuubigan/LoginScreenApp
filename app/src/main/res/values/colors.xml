@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">@color/brownishGrey</color>
+    <color name="colorAccent">@color/darkSkyBlue</color>
+    <color name="brownishGrey">#6e6e6e</color>
+    <color name="tangerine">#ff9b00</color>
+    <color name="darkSkyBlue">#4e92df</color>
+</resources>
