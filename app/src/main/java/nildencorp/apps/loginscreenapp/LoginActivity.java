@@ -2,6 +2,7 @@ package nildencorp.apps.loginscreenapp;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -42,8 +43,9 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private boolean errorShowed = false;
-    private final static double KELVIN_CONST = 273.15;
+    private final static double KELVIN_CONST = 273.15; // difference
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,11 +119,11 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     private void getWeather() {
         ServerApi serverApi = ApiCore.getApiClient();
@@ -139,13 +141,14 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseObject> call, Throwable t) {
-                Snackbar.make(findViewById(R.id.root_container), "Не удалось подключиться к серверу", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(findViewById(R.id.root_container), getString(R.string.could_not_connect_to_server), Snackbar.LENGTH_LONG).show();
                 showProgress(false);
 
             }
 
         });
     }
+
     private static void hideKeyboardFrom(Context context, View view) {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
@@ -222,6 +225,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
 }
 
